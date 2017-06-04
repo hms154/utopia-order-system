@@ -7,7 +7,7 @@ import { Flex, Box } from 'reflexbox'
 
 const styles = {
   imageSize: {
-    width: "50%"
+    width: "100%"
   }
 };
 
