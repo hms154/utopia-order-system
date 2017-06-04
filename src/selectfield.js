@@ -25,9 +25,6 @@ class DropDownMenuLongMenuExample extends Component {
   };
 
   render() {
-    console.log("+++++")
-    console.log(this.props)
-    console.log("+++++")
     return (
       <div>
         <SelectField

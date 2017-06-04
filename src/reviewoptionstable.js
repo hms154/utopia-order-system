@@ -74,7 +74,6 @@ class ReviewOptionsTable extends React.Component {
     var switchesPerRoom = 2
     var hallwaySwitches = 2
     var totalSwitches = rooms*switchesPerRoom + hallwaySwitches
-    console.log("TOTAL LUTRON SWITCHES = %s", totalSwitches)
     return totalSwitches
   }
 
@@ -87,7 +86,7 @@ class ReviewOptionsTable extends React.Component {
       return 0
 
      var rooms = this.props.numberOfRooms
-     return Math.max(Math.round(rooms/8), 1)   
+     return Math.max(Math.round(rooms/8), 1)
   }
 
   costOfThermostats = () => {
@@ -99,7 +98,7 @@ class ReviewOptionsTable extends React.Component {
       return 0
 
      var rooms = this.props.numberOfRooms
-     return Math.max(Math.round(rooms/2), 1)   
+     return Math.max(Math.round(rooms/2), 1)
   }
 
   costOfSpeakers = () => {
@@ -111,7 +110,7 @@ class ReviewOptionsTable extends React.Component {
       return 0
 
      var rooms = this.props.numberOfRooms
-     return Math.max(Math.ceil(rooms/8), 1)   
+     return Math.max(Math.ceil(rooms/8), 1)
   }
 
   costOfEeros = () => {
@@ -123,7 +122,7 @@ class ReviewOptionsTable extends React.Component {
       return 0
 
      var rooms = this.props.numberOfRooms
-     return Math.max(Math.ceil(rooms/8), 1)   
+     return Math.max(Math.ceil(rooms/8), 1)
   }
 
   costOfEchos = () => {
@@ -135,7 +134,7 @@ class ReviewOptionsTable extends React.Component {
       return 0
 
      var dots = this.props.numberOfRooms
-     return Math.max(dots - this.numberOfEchos(), 0)  
+     return Math.max(dots - this.numberOfEchos(), 0)
   }
 
   costOfEchoDots = () => {
@@ -155,22 +154,19 @@ class ReviewOptionsTable extends React.Component {
   totalCostOfDevices = () => {
       return this.costOfUtopiaExperience() +
              this.costOfHomeAutomation() +
-             this.costOfEchoDots() + 
-             this.costOfEchos() + 
-             this.costOfEeros() + 
-             this.costOfSpeakers() + 
-             this.costOfThermostats() + 
+             this.costOfEchoDots() +
+             this.costOfEchos() +
+             this.costOfEeros() +
+             this.costOfSpeakers() +
+             this.costOfThermostats() +
              this.costOfSwitches()
-  }   
+  }
 
   render() {
-    console.log("*****")
-    console.log(this.props)
-    console.log("*****")
     return (
       <div>
          <Table multiSelectable={true}>
-            <TableHeader 
+            <TableHeader
               displaySelectAll={this.state.showCheckboxes}
               adjustForCheckbox={this.state.showCheckboxes}
             >
