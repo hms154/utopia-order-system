@@ -10,9 +10,6 @@ import {toggleSmartOption, smartOptionsEnum} from './actions'
 
 let store = createStore(smartOptions)
 
-// Log the initial state
-console.log(store.getState())
-
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Toggle from 'material-ui/Toggle';
 import {toggleSmartOption, smartOptionsEnum} from './actions'
 import { connect } from 'react-redux'
- 
+
 const styles = {
   block: {
     maxWidth: 250,
@@ -34,14 +34,10 @@ class SmartFeatureToggle extends Component {
   }
 
   handleChange = (event, index, value) => {
-    console.log("updating FEATURE %s", this.props.type)
     this.props.dispatch(toggleSmartOption(this.props.type))
   };
 
   render() {
-    console.log("-----")
-    console.log(this.props)
-    console.log("-----")
     return (
     <div style={styles.block}>
         <Toggle
@@ -52,7 +48,7 @@ class SmartFeatureToggle extends Component {
         toggled={this.props.options[this.props.type].ON}
         />
     </div>
-    );        
+    );
   }
 }
 function mapStateToProps(state) {
